@@ -1,7 +1,6 @@
 package com.example.azurespringdatajpatest002.glasses;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
@@ -9,7 +8,9 @@ import org.springframework.web.bind.annotation.*;
         @RequestMapping(path="/glasses")
 public class GlassesController {
 
-    private GlassesRepository glassesRepository;
+    private final GlassesRepository glassesRepository;
+
+    public GlassesController(GlassesRepository repository) {this.glassesRepository = repository;}
 
     @PostMapping(path="/add")
     public @ResponseBody String addNewGlasses (@RequestParam String name) {
@@ -22,6 +23,7 @@ public class GlassesController {
 
     @GetMapping("/all")
     public @ResponseBody Iterable<GlassesModel> showAllGlasses () {
+
         return glassesRepository.findAll();
     }
 }
