@@ -1,12 +1,14 @@
 package com.example.azurespringdatajpatest002.glasses;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
         @RequestMapping(path="/glasses")
 public class GlassesController {
 
+    @Autowired
     private GlassesRepository glassesRepository;
 
     @PostMapping(path="/add")
