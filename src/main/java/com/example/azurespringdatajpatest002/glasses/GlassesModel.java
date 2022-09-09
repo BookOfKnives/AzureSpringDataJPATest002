@@ -10,7 +10,7 @@ public class GlassesModel {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     long Id;
-
+    String name;
     public String getName() {
         return name;
     }
@@ -19,7 +19,7 @@ public class GlassesModel {
         this.name = name;
     }
 
-    String name;
+
 
     public GlassesModel(){
     }
