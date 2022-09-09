@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
         @RequestMapping(path="/glasses")
 public class GlassesController {
 
-    @Autowired
     private GlassesRepository glassesRepository;
 
     @PostMapping(path="/add")
