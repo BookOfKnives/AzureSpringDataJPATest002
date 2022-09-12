@@ -13,9 +13,9 @@ public class GlassesController {
     public GlassesController(GlassesRepository repository) {this.glassesRepository = repository;}
 
     @PostMapping(path="/add")
-    public @ResponseBody String addNewGlasses (@RequestBody String name) {
+    public @ResponseBody String addNewGlasses (@RequestBody GlassesModel glasses) {
         GlassesModel newGlasses = new GlassesModel();
-        newGlasses.setName(name);
+        newGlasses.setName(glasses.getName());
         glassesRepository.save(newGlasses);
         System.out.println("its a successs!! inside postmapping of glasescontrol");
         return "its a cuess, boss, you added a glass!";
