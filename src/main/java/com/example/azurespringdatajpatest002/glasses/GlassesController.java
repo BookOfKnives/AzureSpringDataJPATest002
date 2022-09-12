@@ -13,7 +13,7 @@ public class GlassesController {
     public GlassesController(GlassesRepository repository) {this.glassesRepository = repository;}
 
     @PostMapping(path="/add")
-    public @ResponseBody String addNewGlasses (@RequestParam String name) {
+    public @ResponseBody String addNewGlasses (@RequestBody String name) {
         GlassesModel newGlasses = new GlassesModel();
         newGlasses.setName(name);
         glassesRepository.save(newGlasses);
