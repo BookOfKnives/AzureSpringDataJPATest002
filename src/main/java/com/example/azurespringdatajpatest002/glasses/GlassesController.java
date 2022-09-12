@@ -3,7 +3,7 @@ package com.example.azurespringdatajpatest002.glasses;
 
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin
+
 @RestController
         @RequestMapping(path="/glasses")
 public class GlassesController {
