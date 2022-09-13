@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class Greetingscontroller {
+
+    String strangeString;
 @RequestMapping("/hello") @ResponseBody
     public String hello(@RequestParam(defaultValue="User") String name){
-    return "Greetings, " + name + "!";
+    strangeString = "first of many";
+
+    return "Greetings, " + name + "!" + strangeString;
+
     }
 }
