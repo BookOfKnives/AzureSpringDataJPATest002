@@ -1,10 +1,14 @@
 package com.example.azurespringdatajpatest002.glasses;
 
+import lombok.Setter;
+import org.springframework.boot.autoconfigure.batch.BatchDataSource;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Setter
 @Entity
 public class GlassesModel {
     @Id

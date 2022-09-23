@@ -2,8 +2,7 @@ package com.example.azurespringdatajpatest002;
 
 import com.example.azurespringdatajpatest002.glasses.GlassesModel;
 import com.example.azurespringdatajpatest002.glasses.GlassesRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
+@Slf4j
 public class AzureSpringDataJpaTest002Application {
 //3108 2022 test af Spring DataJPA, Spring Web og Mysqldriver til Azure. Skal have en repo, model,
     //plus en rest view; bruge mysql til at forbinde til en sql skema.
@@ -20,7 +20,7 @@ public class AzureSpringDataJpaTest002Application {
         SpringApplication.run(AzureSpringDataJpaTest002Application.class, args);
     }
 
-    private static final Logger log = LoggerFactory.getLogger(AzureSpringDataJpaTest002Application.class);
+  //  private static final Logger log = LoggerFactory.getLogger(AzureSpringDataJpaTest002Application.class);
     @Bean
     public CommandLineRunner importData(GlassesRepository glassesRepository) {
         return (args) -> {
